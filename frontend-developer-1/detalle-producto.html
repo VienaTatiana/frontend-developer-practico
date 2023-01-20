@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Detalle-producto</title>
+    <style>
+         :root {
+            --white:#FFFFFF;
+            --black:#000000;
+            --dark:#232830;
+            --very-light-pink: #c7c7c7;
+            --text-input-field: #f7f7f7;
+            --hospital-green:#ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+        }
+        .product-detail{
+            width: 360px;
+            padding-bottom: 24px;
+            position: absolute;
+            right: 0;
+        }
+        .image-container{
+            position: relative;
+            width: 100%;
+        }
+        .product-detail-close{
+            position: absolute;
+            right: 0;
+            top: 24px;
+            right: 24px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--white);
+            border-radius: 50%;
+        }
+        .product-detail-close img{
+            position: absolute;
+            cursor: pointer;
+        }
+        .image-container > img:nth-child(2){
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 0 0 16px 16px;
+        }
+        .three-point {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            height: 16px;
+            margin-top: 12px;
+        }
+        .circle{
+            display: flex;
+            margin-right: 8px;
+            flex-direction: row;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-input-field);
+            cursor: pointer;
+            border: 1px solid var(--very-light-pink);
+        }
+        .circle:hover{
+            background: var(--very-light-pink);
+        }
+        .primary-button{
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .add-to-cart-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-info{
+            margin: 0 24px;
+        }
+        .product-info > p:nth-child(1){
+            font-size: var(--lg);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .product-info > p:nth-child(2){
+            font-size: var(--md);
+            color: var(--very-light-pink);
+            margin-top: 4px;
+        }
+        .product-info > p:nth-child(3){
+            font-size: var(--sm);
+            color: var(--very-light-pink);
+        }
+        @media (max-width:640px){
+            .product-detail{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <aside class="product-detail">
+        <div class="image-container">
+            <div class="product-detail-close">
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <img src="https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg?auto=compress&cs=tinysrgb&w=400" alt="product">
+            <div class="three-point">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>    
+        <div class="product-info">
+            <p>$5,00</p>
+            <p>Coffee</p>
+            <p>Cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente.</p>
+            <button class="primary-button add-to-cart-button">
+                <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+                Add to card
+            </button>
+        </div>
+   </aside>
+</body>
+</html>
