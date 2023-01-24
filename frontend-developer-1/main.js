@@ -93,26 +93,51 @@ function closeProductDetailAside(){
 
 const productList = [];
 productList.push({
+    name: 'Latee',
+    price: 1.50,
+    image: 'https://images.pexels.com/photos/14416477/pexels-photo-14416477.jpeg?auto=compress&cs=tinysrgb&w=400',
+    detail: 'cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente',
+});
+
+productList.push({
+    name: 'capuchino',
+    price: 2,
+    image: 'https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg?auto=compress&cs=tinysrgb&w=400',
+    detail: 'cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente',
+});
+
+productList.push({
+    name: 'Cafe americano',
+    price: 1,
+    image: 'https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=400',
+    detail: 'cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente',
+});
+
+productList.push({
     name: 'cafe helado',
-    price: 5,
-    image: 'https://images.pexels.com/photos/12100691/pexels-photo-12100691.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+    price: 2,
+    image: 'https://images.pexels.com/photos/1193335/pexels-photo-1193335.jpeg?auto=compress&cs=tinysrgb&w=400',
+    detail: 'cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente',
 });
 
 productList.push({
-    name: 'horchata',
-    price: 2.5,
-    image: 'https://images.pexels.com/photos/12100691/pexels-photo-12100691.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+    name: 'churros espanoles',
+    price: 2.50,
+    image: 'https://images.pexels.com/photos/416663/pexels-photo-416663.jpeg?auto=compress&cs=tinysrgb&w=400',
+    detail: 'cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente',
 });
 
 productList.push({
-    name: 'ice-cream',
-    price: 3,
-    image: 'https://images.pexels.com/photos/12100691/pexels-photo-12100691.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+    name: 'cafe en grano',
+    price: 6,
+    image: 'https://images.pexels.com/photos/14838261/pexels-photo-14838261.jpeg?auto=compress&cs=tinysrgb&w=400',
+    detail: 'cafe de exquisito sabor cultivado con los mayores estandares de calidad, respetando el medio ambiente',
 });
 
 
 for (product of productList) {
 
+    /*Lista de productos*/
     const productCard = document.createElement ('div');
     productCard.classList.add ('product-card');
 
@@ -146,4 +171,5 @@ for (product of productList) {
     cardsContainer.appendChild (productCard);
 
     SectionContainerProductList.appendChild(cardsContainer);
+
 }
