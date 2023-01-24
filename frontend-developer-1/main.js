@@ -6,17 +6,25 @@ const menuCarritoIcon = document.querySelector ('.navbar-shopping-cart');
 const menuOrdenesCarrito = document.querySelector ('.container-main-carrito-compra');
 const cardsContainer = document.querySelector ('.card-container');
 const SectionContainerProductList = document.querySelector ('.main-container');
+const productDetailContainer = document.querySelector ('.product-detail');
+const productDetailCloseIcon = document.querySelector ('.product-detail-close');
 
 
 btnFlecha.addEventListener ('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoIcon);
+productDetailCloseIcon.addEventListener ('click', closeProductDetailAside);
 
 function toggleDesktopMenu (){
     const isMenuOrdenesCarritoClose = menuOrdenesCarrito.classList.contains('inactive');
+    const isproductDetailContainerClose = productDetailContainer.classList.contains ('inactive');
 
     if (!isMenuOrdenesCarritoClose){
         menuOrdenesCarrito.classList.add('inactive');
+    }
+
+    if (!isproductDetailContainerClose){
+        productDetailContainer.classList.add ('inactive');
     }
 
     desktopMenu.classList.toggle ('inactive');
@@ -25,9 +33,14 @@ function toggleDesktopMenu (){
 function toggleMobileMenu(){
     const isMobileMenuClose = mobileMenu.classList.contains('inactive');
     const isMenuOrdenesCarritoClose = menuOrdenesCarrito.classList.contains('inactive');
+    const isProductDetailContainerClose = productDetailContainer.classList.contains('inactive');
 
     if (!isMenuOrdenesCarritoClose){
         menuOrdenesCarrito.classList.add('inactive');
+    }
+
+    if (!isProductDetailContainerClose ){
+        productDetailContainer.classList.add ('inactive');
     }
     
     mobileMenu.classList.toggle ('inactive');
@@ -36,6 +49,7 @@ function toggleMobileMenu(){
 function toggleCarritoIcon(){
     const isMobileMenuClose = mobileMenu.classList.contains('inactive');
     const isDesktopMenuClose = desktopMenu.classList.contains('inactive');
+    const isProductDetailContainerClose = productDetailContainer.classList.contains('inactive');
 
     if (!isMobileMenuClose){
         mobileMenu.classList.add ('inactive');
@@ -45,8 +59,37 @@ function toggleCarritoIcon(){
      }
     }
 
+    if(!isProductDetailContainerClose){
+        productDetailContainer.classList.add ('inactive');
+    }
+
     menuOrdenesCarrito.classList.toggle('inactive');
 }
+
+function openProductDetailaside(){
+    const isMenuOrdenesCarritoClose = menuOrdenesCarrito.classList.contains('inactive');
+    const isMobileMenuClose = mobileMenu.classList.contains('inactive');
+    const isDesktopMenuClose = desktopMenu.classList.contains('inactive');
+
+    if (!isMenuOrdenesCarritoClose){
+        menuOrdenesCarrito.classList.add('inactive');
+    } 
+
+    if (!isMobileMenuClose){
+        mobileMenu.classList.add ('inactive');
+    }
+
+    if (!isDesktopMenuClose ){
+        desktopMenu.classList.add ('inactive');
+    }
+
+    productDetailContainer.classList.remove ('inactive');
+}
+
+function closeProductDetailAside(){
+    productDetailContainer.classList.add ('inactive');
+}
+
 
 const productList = [];
 productList.push({
@@ -75,9 +118,10 @@ for (product of productList) {
 
     const productImg = document.createElement ('img');
     productImg.setAttribute ('src', product.image);
+    productImg.addEventListener ('click', openProductDetailaside);
 
-    const productInfo = document.createElement ('div');
-    productInfo.classList.add ('product-info');
+    const productListInfo = document.createElement ('div');
+    productListInfo.classList.add ('product-info');
 
     const productInfoDetail = document.createElement('div');
     
@@ -95,9 +139,9 @@ for (product of productList) {
 
     figureShoppingIcon.appendChild(productImgCart);
 
-    productInfo.append (productInfoDetail, figureShoppingIcon);
+    productListInfo.append (productInfoDetail, figureShoppingIcon);
 
-    productCard.append (productImg, productInfo);
+    productCard.append (productImg, productListInfo);
 
     cardsContainer.appendChild (productCard);
 
